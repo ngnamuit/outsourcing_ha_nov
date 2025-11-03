@@ -1,0 +1,1 @@
+# outsourcing_ha_nov
