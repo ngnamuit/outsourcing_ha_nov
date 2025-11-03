@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_pallet_type_root"
+        name="Pallet Types"
+        parent="stock.menu_warehouse_config"
+        action="inventory_advanced.action_pallet_type"
+        sequence="60"
+        groups="stock.group_stock_manager"/>
+
+    <menuitem id="menu_crack_type_root"
+        name="Crack Types"
+        parent="stock.menu_warehouse_config"
+        action="inventory_advanced.action_crack_type"
+        sequence="65"
+        groups="stock.group_stock_manager"/>
+</odoo>
