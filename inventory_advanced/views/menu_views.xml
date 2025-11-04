@@ -4,13 +4,13 @@
         name="Pallet Types"
         parent="stock.menu_warehouse_config"
         action="inventory_advanced.action_pallet_type"
-        sequence="60"
+        sequence="4"
         groups="stock.group_stock_manager"/>
 
     <menuitem id="menu_crack_type_root"
         name="Crack Types"
         parent="stock.menu_warehouse_config"
         action="inventory_advanced.action_crack_type"
-        sequence="65"
+        sequence="5"
         groups="stock.group_stock_manager"/>
 </odoo>

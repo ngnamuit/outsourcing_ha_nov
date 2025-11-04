@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_location_form_storage_info" model="ir.ui.view">
+        <field name="name">stock.location.form.storage.info</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group" position="inside">
+                <group string="Storage Information">
+                    <field name="is_rack_type" />
+                    <field name="rack_type_id" invisible="not is_rack_type"/>
+                </group>
+                <group string="Dimensions and Capacity" invisible="not is_rack_type">
+                    <field name="height" />
+                    <field name="deep" />
+                    <field name="weight" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_location_tree_storage_info" model="ir.ui.view">
+        <field name="name">stock.location.tree.storage.info</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_empty']" position="after">
+                <field name="is_rack_type"/>
+            </xpath>
+            <xpath expr="//field[@name='storage_category_id']" position="after">
+                <field name="height" optional="show"/>
+                <field name="weight" optional="show" />
+                <field name="deep" optional="show" />
+                <field name="rack_type_id" optional="show" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

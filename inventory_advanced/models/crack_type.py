@@ -19,7 +19,7 @@ class CrackType(models.Model):
     _order = "name"
 
     name = fields.Char(string="Name", required=True)
-    beam_width = fields.Integer(string="Beam Width")
+    beam_width = fields.Integer(string="Beam Width (mm)")
     pallets_type_id = fields.Many2one("pallet.type", string="Pallets Type")
     capacity = fields.Integer(string="Capacity")
     active = fields.Boolean(string="Active", default=True)
