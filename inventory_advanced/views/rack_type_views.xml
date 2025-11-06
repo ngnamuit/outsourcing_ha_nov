@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_crack_type_tree" model="ir.ui.view">
-        <field name="name">crack.type.tree</field>
-        <field name="model">crack.type</field>
+    <record id="view_rack_type_tree" model="ir.ui.view">
+        <field name="name">rack.type.tree</field>
+        <field name="model">rack.type</field>
         <field name="arch" type="xml">
-            <list string="Crack Types" editable="bottom">
+            <list string="rack Types" editable="bottom">
                 <field name="name"/>
                 <field name="beam_width"/>
                 <field name="capacity"/>
-                <field name="pallets_type_id"/>
+                <field name="pallet_type_id"/>
             </list>
         </field>
     </record>
 
-    <record id="view_crack_type_form" model="ir.ui.view">
-        <field name="name">crack.type.form</field>
-        <field name="model">crack.type</field>
+    <record id="view_rack_type_form" model="ir.ui.view">
+        <field name="name">rack.type.form</field>
+        <field name="model">rack.type</field>
         <field name="arch" type="xml">
-            <form string="Crack Type">
+            <form string="rack Type">
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="beam_width"/>
                         <field name="capacity"/>
-                        <field name="pallets_type_id" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="pallet_type_id" options="{'no_open': True, 'no_create': True}"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-
-    <record id="action_crack_type" model="ir.actions.act_window">
-        <field name="name">Crack Types</field>
-        <field name="res_model">crack.type</field>
+    <record id="action_rack_type" model="ir.actions.act_window">
+        <field name="name">rack Types</field>
+        <field name="res_model">rack.type</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create crack types to use in inventory configuration.
+                Create rack types to use in inventory configuration.
             </p>
         </field>
     </record>

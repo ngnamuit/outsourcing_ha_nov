@@ -1,0 +1,14 @@
+/* static/src/scss/suggest.scss */
+.o-suggest-box .o_list_view {
+  max-height: 360px;          /* vẫn giữ scroll dọc nếu nhiều dòng */
+  overflow: auto;
+  min-width: 1020px !important;
+}
+
+.o-suggest-box .o_list_view th {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.2;
+  word-break: break-word;
+}

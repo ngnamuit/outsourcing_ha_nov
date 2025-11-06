@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_move_operations_inherit" model="ir.ui.view">
+        <field name="name">stock.move.operations.form.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_volume" />
+                <field name="product_weight" />
+            </xpath>
+            <xpath expr="//group" position="after">
+                <group>
+                    <field name="picking_type_code" invisible="1"/>
+                    <button name="action_fill_suggest_lines" string="Suggest Location" type="object" class="btn-primary"
+                        invisible="picking_type_code != 'incoming'"/>
+                </group>
+                <group>
+                    <div class="o-suggest-box">
+                        <field name="suggest_line_ids" nolabel="1" readonly="1" force_save="1" invisible="not suggest_line_ids">
+                            <list>
+                                <field name="name"/>
+                                <field name="available_volume" string="Avail Volume"/>
+                                <field name="available_weight" string="Avail Weight"/>
+                                <field name="percent_used"/>
+                                <field name="suggested_qty" string="Suggest Qty"/>
+                                <field name="rack_type_id" string="Rack"/>
+                                <field name="beam_width" string="Beam" />
+                                <field name="capacity"/>
+                                <field name="pallet_type_id"/>
+                                <field name="note"/>
+                            </list>
+                        </field>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

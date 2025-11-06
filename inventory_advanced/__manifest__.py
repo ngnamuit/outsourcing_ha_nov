@@ -10,10 +10,16 @@
     "data": [
         "security/ir.model.access.csv",
         "views/pallet_type_views.xml",
-        "views/crack_type_views.xml",
+        "views/rack_type_views.xml",
         "views/stock_location_views.xml",
+        "views/stock_move_views.xml",
         "views/menu_views.xml",
     ],
+    'assets': {
+        'web.assets_backend': [
+            'inventory_advanced/static/src/scss/suggest.scss',
+        ],
+    },
     "application": False,
     "installable": True,
 }

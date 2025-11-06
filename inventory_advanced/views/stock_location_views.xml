@@ -8,12 +8,17 @@
             <xpath expr="//form/sheet/group" position="inside">
                 <group string="Storage Information">
                     <field name="is_rack_type" />
-                    <field name="rack_type_id" invisible="not is_rack_type"/>
+                    <field name="rack_type_id" invisible="not is_rack_type" options='{"no_open": True, "no_create": True}' />
+                    <field name="rack_type_beam_width" invisible="not is_rack_type" />
+                    <field name="rack_type_capacity" invisible="not is_rack_type" />
+                    <field name="rack_type_pallet_type_id" invisible="not is_rack_type" options='{"no_open": True}' />
                 </group>
                 <group string="Dimensions and Capacity" invisible="not is_rack_type">
                     <field name="height" />
+                    <field name="width" />
                     <field name="deep" />
                     <field name="weight" />
+                    <field name="volume" />
                 </group>
             </xpath>
         </field>
@@ -28,9 +33,8 @@
                 <field name="is_rack_type"/>
             </xpath>
             <xpath expr="//field[@name='storage_category_id']" position="after">
-                <field name="height" optional="show"/>
+                <field name="volume" optional="show" />
                 <field name="weight" optional="show" />
-                <field name="deep" optional="show" />
                 <field name="rack_type_id" optional="show" />
             </xpath>
         </field>
