@@ -4,7 +4,7 @@
         <field name="name">rack.type.tree</field>
         <field name="model">rack.type</field>
         <field name="arch" type="xml">
-            <list string="rack Types" editable="bottom">
+            <list string="Rack Types" editable="bottom">
                 <field name="name"/>
                 <field name="beam_width"/>
                 <field name="capacity"/>
@@ -17,7 +17,7 @@
         <field name="name">rack.type.form</field>
         <field name="model">rack.type</field>
         <field name="arch" type="xml">
-            <form string="rack Type">
+            <form string="Rack Type">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -31,7 +31,7 @@
     </record>
 
     <record id="action_rack_type" model="ir.actions.act_window">
-        <field name="name">rack Types</field>
+        <field name="name">Rack Types</field>
         <field name="res_model">rack.type</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
