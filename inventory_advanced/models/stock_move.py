@@ -13,7 +13,7 @@ class StockMove(models.Model):
         "stock.suggest.location", "move_id", string="Suggested Location"
     )
 
-    def action_fill_suggest_lines(self, limit=20):
+    def action_fill_suggest_lines(self, limit=10):
         self.ensure_one()
         product = self.product_id or None
         quantity = self.product_uom_qty or 0
@@ -99,20 +99,18 @@ class StockMove(models.Model):
             loc_id = row.get("location_id")
             av_m3 = float(row.get("available_m3") or 0.0)
             av_kg = float(row.get("available_kg") or 0.0)
-
+            location_name = row.get("name")
             cap_by_vol = int(av_m3 // unit_vol) if unit_vol > 0.0 else int(remaining)
             cap_by_w = int(av_kg // unit_w) if unit_w > 0.0 else int(remaining)
 
+            # skip if not vol or cap in shelf
             fit = max(0, min(cap_by_vol, cap_by_w))
             if fit <= 0:
                 continue
-
             put = min(fit, remaining)
-            if put <= 0:
-                continue
 
             values = {
-                "name": row.get("name"),
+                "name": location_name,
                 "location_id": loc_id,
                 "available_volume": av_m3,
                 "available_weight": av_kg,
